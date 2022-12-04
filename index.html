@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 Puzzle A*</title>
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link rel="stylesheet" href="style/home.css">
+</head>
+<body>
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">8-Puzzle game</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <div class="d-flex">
+                <label>Time:</label>
+                <select id="select" style="font-size:12px ;">
+                    <option value="1">
+                        X1
+                    </option>
+                    <option value="2">
+                        X2
+                    </option>
+                    <option value="3">
+                        X3
+                    </option>
+                    <option value="4">
+                        X4
+                    </option>
+                </select>
+            </div>
+           
+        </li>
+        <li class="nav-item">
+            <div class="d-flex">
+                <label>Algorithm:</label>
+                <select id="select1" style="font-size:12px ;">
+                    <option value="1">
+                        Best first search(Greedy)
+                    </option>
+                    <option value="2">
+                        A*
+                    </option>
+                </select>
+            </div>
+           
+        </li>
+        <li class="nav-item">
+            <div class="d-flex">
+                <label>Heuristic:</label>
+                <select id="select2" style="font-size:12px ;">
+                    <option value="1" >
+                       Num of blocks in the wrong place
+                    </option>
+                    <option value="2">
+                        Manhattan distance
+                     
+                    </option>
+                </select>
+            </div>
+           
+        </li>
+          <li class="nav-item">
+            <button class="btn btn-success move" onclick="Start()">Start</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-danger move" onclick="Reset()">Reset</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-danger" onclick="Refresh()">Refresh</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-outline-dark move" onclick="moveTop(Node_Arr,0)">Top</button>
+        </li>
+
+          <li class="nav-item">
+            <button class="btn btn-outline-dark move" onclick="moveBottom(Node_Arr,0)">Bottom</button>
+        </li>
+
+          <li class="nav-item">
+            <button class="btn btn-outline-dark move" onclick="moveLeft(Node_Arr,0)">Left</button>
+        </li>
+
+          <li class="nav-item">
+            <button class="btn btn-outline-dark move" onclick="moveRight(Node_Arr,0)">Right</button>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="per">
+    <h2 id="err" class="bg-danger"></h2>
+<div class="d-flex external">
+    <div class="w-50 internal">
+        <div class="person-calss">
+        <h2>Current State</h2>    
+        <div class="fram" id="fram">
+        
+        </div>
+       </div>
+    </div>
+   
+<div class="w-50 internal">
+    <div class="person-calss">
+        <h2>Goal State</h2>    
+        <div class="fram1" id="fram1">
+        
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="javascript/bootstrap.bundle.min.js"></script>    
+<script src="javascript/home.js"></script>    
+</body>
+</html>
